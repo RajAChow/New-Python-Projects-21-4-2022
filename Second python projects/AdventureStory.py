@@ -31,7 +31,7 @@ def adventureTime():
 def choice2():
     while True:
         driving_image = Image.open('sleep_driving.jpg')
-        driving_image.show()
+        driving_image.show() #This prints an image corresponding to the user's response
         choice2 = input("\nWhile driving to work you pass out at the wheel, can you wake up in time? (y/n): ")
         if choice2.lower() == "y":
             #if the user chooses y, then this function calls the function choice3 @ line 49
@@ -81,8 +81,8 @@ def choice5():
     while True:
         choice5 = input("\nDo you charge at him or surrender peacfully? (c/s): ")
         if choice5.lower() == "c":
-            ghoul_image = Image.open('kaneki.jpg')
-            ghoul_image.show()
+            ghoul_image = Image.open('kaneki.jpg') 
+            ghoul_image.show() #This prints an image corresponding to the user's response
             #if the user chooses c, then this will give the user a unique ending
             print("He shoots you dead, but not before you split him in half with your ghoul powers. The end.")
             break
@@ -150,8 +150,8 @@ def choiceD():
             print("You pummel his body mercilessly and live happily ever after. The end.")
             break
         elif choiceD.lower() == "n": 
-            despair_image = Image.open('troll_despair.jpg')
-            despair_image.show()
+            despair_image = Image.open('troll_despair.jpg') 
+            despair_image.show() #This prints an image corresponding to the user's response
             #if the user chooses n, then this will give the user a unique ending
             print("September 17th, 2074: The Butter Sock Workplace Incident. The end")
             break
@@ -162,7 +162,7 @@ def choiceD():
 def choiceE():
     while True:
         rinnegan_image = Image.open('Sasuke_Rinnegan.jpg')
-        rinnegan_image.show()
+        rinnegan_image.show() #This prints an image corresponding to the user's response
         choiceE = input("\nYou reveal that you have the rinnegan, do you spare him? (y/n): ")
         if choiceE.lower() == "y":
             #if the user chooses y, then this will give the user a unique ending
