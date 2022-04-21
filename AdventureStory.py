@@ -1,3 +1,5 @@
+from PIL import Image
+
 def userGreeting():
     while True:
         user_name = input("What is your name?: ")
@@ -23,6 +25,8 @@ def adventureTime():
 
 def choice2():
     while True:
+        driving_image = Image.open('sleep_driving.jpg')
+        driving_image.show()
         choice2 = input("\nWhile driving to work you pass out at the wheel, can you wake up in time? (y/n): ")
         if choice2.lower() == "y":
             print("You save yourself, but get pulled over by a cop")
@@ -53,11 +57,11 @@ def choice4():
     while True:
         choice4 = input("\nYou can either kill him now or drive away? (k/d): ")
         if choice4.lower() == "k":
-            print("You kill the innocent officer and get away, but reconsider you life choices and turn yourself in. The")
+            print("You kill the innocent officer and get away, but reconsider you life choices and turn yourself in. The end")
             break
         elif choice4.lower() == "d":
             print("Before you're able to drive away, you find yourself surrounded, instead of giving up you fight and mange to kill\
-                17 officers before you're put down yourself. The end.")
+17 officers before you're put down yourself. The end.")
             break
         else:
             print("Invalid answer")
@@ -66,6 +70,8 @@ def choice5():
     while True:
         choice5 = input("\nDo you charge at him or surrender peacfully? (c/s): ")
         if choice5.lower() == "c":
+            ghoul_image = Image.open('kaneki.jpg')
+            ghoul_image.show()
             print("He shoots you dead, but not before you split him in half with your ghoul powers. The end.")
             break
         elif choice5.lower() == "s":
@@ -110,7 +116,7 @@ def choiceC():
             choiceE()
         elif choiceC.lower() == "n": 
             print("You calm down, he reveals it was a test and confirms thatyou failed\
-                because you're a beta male. The end.")
+because you're a beta male. The end.")
             break
         else:
             print("Invalid answer")
@@ -124,6 +130,8 @@ def choiceD():
             print("You pummel his body mercilessly and live happily ever after. The end.")
             break
         elif choiceD.lower() == "n": 
+            despair_image = Image.open('troll_despair.jpg')
+            despair_image.show()
             print("September 17th, 2074: The Butter Sock Workplace Incident. The end")
             break
         else:
@@ -132,6 +140,8 @@ def choiceD():
 
 def choiceE():
     while True:
+        rinnegan_image = Image.open('Sasuke_Rinnegan.jpg')
+        rinnegan_image.show()
         choiceE = input("\nYou reveal that you have the rinnegan, do you spare him? (y/n): ")
         if choiceE.lower() == "y":
             print("He thanks you for sparing him, but back stabs you and awakens his mangekyou, you die. The end.")
