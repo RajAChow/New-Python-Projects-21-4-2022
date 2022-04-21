@@ -1,11 +1,12 @@
-while True:
-    user_name = input("What is your name?: ")
-    if user_name.isalpha() == True:
-        print(f"Hi {user_name}\n")
-        break
-    else:
-        print("Names can only have letters bruh")
-        continue
+def userGreeting():
+    while True:
+        user_name = input("What is your name?: ")
+        if user_name.isalpha() == True:
+            print(f"Hi {user_name}\n")
+            break
+        else:
+            print("Names can only have letters bruh")
+            continue
 
 def adventureTime():
     while True:
@@ -142,4 +143,5 @@ def choiceE():
             print("Invalid answer")
             continue
 
+userGreeting()
 adventureTime()
