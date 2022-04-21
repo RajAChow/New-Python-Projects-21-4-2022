@@ -1,30 +1,74 @@
+from PIL import Image
 import random
+asked = []
 
 questions = {
-    "q1": "The Earth round?: ", 
-    "q2": "The current year 2014?: ",
-    "q3": "All computers are purple",
-    "q4": "My favourite colour is red",
-    "q5": "",
-    "q6": "",
-    "q7": "",
-    "q8": "",
-    "q9": "",
-    "q10": "",
+    1: "The Earth is round?: ", 
+    2: "The current year is 2014?: ",
+    3: "All computers are purple?: ",
+    4: "My favourite colour red?: ",
+    5: "Computer science is awesome?: ",
+    6: "There are 6 continents in the world?: ",
+    7: "This test is hard?: ",
+    8: "Humans have 10 fingers?: ",
+    9: "There are 14 questions on this test?: ",
+    10: "The order of this test is random?: ",
 }
 
-while True:
-    play_quiz = input("Do you want to take the True or False quiz? Yes or no? ")
-    play_quiz.lower()
-    if play_quiz == "yes":
-        continue
-    elif play_quiz == "no":
-        print("Ending quiz")
-        break
-    else:
-        print("Invalid input")
+answers = {
+    1: "true", 
+    2: "false",
+    3: "false",
+    4: "true",
+    5: "true",
+    6: "false",
+    7: "true",
+    8: "true",
+    9: "false",
+    10: "true",
+}
         
 def quiz():
-    input(questions["q1"])
+    score = 0
+    while len(asked) != 10:
+        random_question = random.randint(1,10)
+        if random_question not in asked:
+            asked.append(random_question)
+            while True:
+                user_answer = input(questions[random_question])
+                check_answer = user_answer.isalpha()
+                if check_answer != True or (user_answer.lower() != "true" and user_answer.lower() != "false"):
+                    print("Invalid asnwer")
+                    continue
+                else:
+                    score += changeScore(random_question, user_answer.lower())
+                    break
+    final_score = (score / 10) * 100
+    print(f"You scored {score} out of 10! That's a percentage of {final_score}%")
 
-print()
+def changeScore(question_number, answer):
+    if answer == answers[question_number]:
+        return 1
+    else:
+        return 0
+  
+def takeQuiz():   
+    times_taken = 0
+    while True:
+        if times_taken == 0:
+            play_quiz = input("Do you want to take the True or False quiz? Yes or no? ")
+            times_taken += 1
+        else:
+            play_quiz = input("Do you want to retake the True or False quiz? Yes or no? ")
+        if play_quiz.lower() == "yes":
+            quiz()
+            continue
+        elif play_quiz.lower() == "no":
+            print("Ending quiz")
+            break
+        else:
+            print("Invalid input")
+            
+takeQuiz()
+image1 = Image.open('yandhi.jpg')
+image1.show()
