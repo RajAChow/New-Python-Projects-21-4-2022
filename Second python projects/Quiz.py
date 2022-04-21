@@ -1,7 +1,9 @@
 from PIL import Image
 import random
+#This is a list containing the questions already asked by the quiz
 asked = []
 
+#This is a dictionary containing the questions for the quiz
 questions = {
     1: "The Earth is round?: ", 
     2: "The current year is 2014?: ",
@@ -15,6 +17,7 @@ questions = {
     10: "The order of this test is random?: ",
 }
 
+#This is a dictionary containing the answers for the quiz
 answers = {
     1: "true", 
     2: "false",
@@ -30,6 +33,7 @@ answers = {
         
 def quiz():
     score = 0
+    asked = []
     while len(asked) != 10:
         random_question = random.randint(1,10)
         if random_question not in asked:
