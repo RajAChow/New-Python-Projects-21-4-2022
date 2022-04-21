@@ -6,11 +6,11 @@ questions = {
     1: "The Earth is round?: ", 
     2: "The current year is 2014?: ",
     3: "All computers are purple?: ",
-    4: "My favourite colour red?: ",
+    4: "There are 9 CDs in this picture?: ",
     5: "Computer science is awesome?: ",
     6: "There are 6 continents in the world?: ",
     7: "This test is hard?: ",
-    8: "Humans have 10 fingers?: ",
+    8: "Is this the cover to Kanye's unreleased album Yandhi?: ",
     9: "There are 14 questions on this test?: ",
     10: "The order of this test is random?: ",
 }
@@ -19,7 +19,7 @@ answers = {
     1: "true", 
     2: "false",
     3: "false",
-    4: "true",
+    4: "false",
     5: "true",
     6: "false",
     7: "true",
@@ -35,6 +35,12 @@ def quiz():
         if random_question not in asked:
             asked.append(random_question)
             while True:
+                if random_question == 8:
+                    yandhi_image = Image.open('yandhi.jpg')
+                    yandhi_image.show()
+                if random_question == 4:
+                    computer_image = Image.open('computer.png')
+                    computer_image.show()
                 user_answer = input(questions[random_question])
                 check_answer = user_answer.isalpha()
                 if check_answer != True or (user_answer.lower() != "true" and user_answer.lower() != "false"):
@@ -70,5 +76,3 @@ def takeQuiz():
             print("Invalid input")
             
 takeQuiz()
-image1 = Image.open('yandhi.jpg')
-image1.show()
